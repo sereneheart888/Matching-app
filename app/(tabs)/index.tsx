@@ -1,34 +1,25 @@
 import { Image, StyleSheet, Platform } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { FontAwesome } from '@expo/vector-icons';
+import RoundedIconButton from '@/components/RoundedIconButton';
 
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
+        <ThemedView style={styles.headerTitleContainer}>
+          <ThemedText type="title">RealSpot</ThemedText>
+        </ThemedView>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        <RoundedIconButton btnText='このエリアで検索 '><FontAwesome name="refresh" size={17} style={styles.btnRefreshIcon} /></RoundedIconButton>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
+        <Image source={require('../../assets/images/user.png')} style={styles.imageStretch} />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
@@ -51,6 +42,11 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  headerTitleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    overflow: 'hidden'
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -67,4 +63,12 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
+  btnRefreshIcon: {
+    paddingTop: 5
+  },
+  imageStretch: {
+    width: '100%',
+    height: '95%',
+    resizeMode: 'stretch'
+  }
 });

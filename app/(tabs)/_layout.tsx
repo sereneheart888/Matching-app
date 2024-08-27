@@ -19,7 +19,10 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
+          tabBarInactiveTintColor: Colors[colorScheme ?? 'light'].icon,
           title: 'ホーム',
+          tabBarActiveBackgroundColor: Colors[colorScheme ?? 'light'].tabBackgroundColor,
+          tabBarInactiveBackgroundColor: Colors[colorScheme ?? 'light'].tabBackgroundColor,
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
@@ -28,8 +31,11 @@ export default function TabLayout() {
       <Tabs.Screen
         name="message"
         options={{
+          tabBarInactiveTintColor: Colors[colorScheme ?? 'light'].icon,
           title: 'トーク',
-          tabBarIcon: ({ color, focused }) => (
+          tabBarActiveBackgroundColor: Colors[colorScheme ?? 'light'].tabBackgroundColor,
+          tabBarInactiveBackgroundColor: Colors[colorScheme ?? 'light'].tabBackgroundColor,
+          tabBarIcon: ({ color }) => (
             <FontAwesome6 name='message' size={24} color={color} />
           ),
         }}
@@ -37,7 +43,10 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
+          tabBarInactiveTintColor: Colors[colorScheme ?? 'light'].icon,
           title: 'マイページ',
+          tabBarActiveBackgroundColor: Colors[colorScheme ?? 'light'].tabBackgroundColor,
+          tabBarInactiveBackgroundColor: Colors[colorScheme ?? 'light'].tabBackgroundColor,
           tabBarIcon: ({ color }) => (
             <FontAwesome name="user-o" size={24} color={color} />
           ),
