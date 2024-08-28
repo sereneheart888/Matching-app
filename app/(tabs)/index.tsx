@@ -7,6 +7,9 @@ import { FontAwesome, FontAwesome6 } from '@expo/vector-icons';
 import RoundedIconButton from '@/components/RoundedIconButton';
 import SearchCondition from '@/components/searchCondition';
 
+import { router } from 'expo-router';
+
+
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
@@ -23,13 +26,13 @@ export default function HomeScreen() {
         <Image source={require('../../assets/images/user.png')} style={styles.imageStretch} />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <Pressable onPress={() => console.log('BBBB')}>
-          <SearchCondition btnText='給与で検索'><FontAwesome6 name="coins" size={24} color='#686868' /></SearchCondition>
-        </Pressable>
+        <SearchCondition btnText='給与で検索'><FontAwesome6 name="coins" size={24} color='#686868' /></SearchCondition>
         <SearchCondition btnText='性別で検索'><FontAwesome6 name="user-group" size={24} color='#686868' /></SearchCondition>
-        <SearchCondition btnText='年齢で検索'><FontAwesome name="search" size={24} color='#686868' /></SearchCondition>
+        <Pressable onPress={() => router.push('../exploreMap')}>
+          <SearchCondition btnText='年齢で検索'><FontAwesome name="search" size={24} color='#686868' /></SearchCondition>
+        </Pressable>
       </ThemedView>
-    </ParallaxScrollView>
+    </ParallaxScrollView >
   );
 }
 
