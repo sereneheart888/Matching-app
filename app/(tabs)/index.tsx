@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   stepContainer: {
-    gap: 8,
+    gap: 5,
     display: 'flex',
     flex: 1,
     flexDirection: 'row',
@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   imageStretch: {
-    width: 300,
-    height: 280,
+    width: "100%",
+    height: 350,
     resizeMode: 'stretch'
   }
 });
