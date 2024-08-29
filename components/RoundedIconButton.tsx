@@ -10,7 +10,7 @@ type Props = PropsWithChildren<{
 
 export default function RoundedIconButton({
     children,
-    btnText
+    btnText,
 }: Props) {
     const colorScheme = useColorScheme() ?? 'light';
     return (

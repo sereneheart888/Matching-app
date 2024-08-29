@@ -66,12 +66,12 @@ const styles = StyleSheet.create({
   header: {
     height: 60,
     paddingTop: 15,
-    overflow: 'hidden',
-    shadowRadius: 3,
-    shadowOpacity: 0.2,
-    elevation: 2,
-    shadowColor: '#171717',
+    // overflow: 'hidden',
+    shadowColor: 'black',
     shadowOffset: { width: -2, height: 4 },
+    shadowRadius: 4,
+    shadowOpacity: 0.4,
+    elevation: 10,
     alignItems: 'center',
   },
   content: {

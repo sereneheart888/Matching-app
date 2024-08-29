@@ -30,6 +30,7 @@ export default function ExploreMap() {
         { name: 'Maya', age: 27, hobby: 'Dance, Yard...', image: <Image source={require('../assets/images/user3.png')} style={styles.icon} /> }]
 
     const [user, setUser] = useState(userData[0])
+    const [userIndex, setUserIndex] = useState(0)
     // function getAddressFromCoordinates(region: any) {
     //     return new Promise((resolve, reject) => {
     //         fetch(
@@ -59,8 +60,10 @@ export default function ExploreMap() {
     useEffect(() => {
         // getAddressFromCoordinates(region)
         const userNumber = Math.round(Math.random() * 3);
-        console.log(userNumber)
-        setUser(userData[userNumber])
+        if (userNumber !== userIndex) {
+            setUserIndex(userNumber);
+            setUser(userData[userNumber])
+        }
     }, [region])
 
     return (

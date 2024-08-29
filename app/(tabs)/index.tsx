@@ -5,6 +5,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { FontAwesome, FontAwesome6 } from '@expo/vector-icons';
 import RoundedIconButton from '@/components/RoundedIconButton';
+import RoundedImageButton from '@/components/RoundedImageButton';
 import SearchCondition from '@/components/searchCondition';
 
 import { router } from 'expo-router';
@@ -15,14 +16,15 @@ export default function HomeScreen() {
     <ParallaxScrollView
       headerImage={
         <ThemedView style={styles.headerTitleContainer}>
-          <ThemedText type="title">RealSpot</ThemedText>
+          <ThemedText type="title" style={{ color: '#5C5F5D', fontWeight: 'bold' }}>RealSpot</ThemedText>
         </ThemedView>
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <RoundedIconButton btnText='このエリアで検索 '><FontAwesome name="refresh" size={17} style={styles.btnRefreshIcon} /></RoundedIconButton>
+        <RoundedIconButton btnText='このエリアでさがす '><FontAwesome name="refresh" size={17} style={styles.btnRefreshIcon} /></RoundedIconButton>
       </ThemedView>
       <ThemedView style={styles.imageContainer}>
+        <RoundedImageButton />
         <Image source={require('../../assets/images/user.png')} style={styles.imageStretch} />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -40,11 +42,12 @@ const styles = StyleSheet.create({
   headerTitleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: -10,
     gap: 8,
   },
   stepContainer: {
@@ -53,6 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     marginBottom: 8,
+    marginTop: 18,
   },
   btnRefreshIcon: {
     paddingTop: 5
